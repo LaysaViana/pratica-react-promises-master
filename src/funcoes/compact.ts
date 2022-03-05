@@ -8,6 +8,10 @@
  * 
  * @returns somente os itens definidos.
  */
- export const compact = (items: unknown[]): unknown[] => {
-  return null;
+export const compact = (items: unknown[]): unknown[] => {
+  const valores: unknown[] = items.filter((item) => {
+    return !!item
+
+  })
+  return valores;
 };

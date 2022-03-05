@@ -29,10 +29,10 @@ function testCompact() {
   const items = [0, 1, false, 2, '', 3, null, undefined, '0'];
   const original = [...items];
   const expected = [1, 2, 3, '0'];
-  
+
   // chamada ao método.
   const resultado = compact(items);
-  
+
   // o array original não pode ser alterado.
   const naoAlterados = original.every((item, index) => item === items[index]);
 
@@ -49,6 +49,7 @@ function testFromPairs() {
     ['name', 'Edgar Allan Poe'],
     ['age', 40],
     ['alive', false]
+
   ];
   const esperado = {
     name: 'Edgar Allan Poe',
@@ -97,7 +98,7 @@ async function testFila() {
     await escreveNaFila(mensagem);
   }
 
-  const mensagensEscritas = await leArquivo(() => {});
+  const mensagensEscritas = await leArquivo();
   const todasMensagensEscritas = mensagensEscritas
     .split('\n')
     .every((mensagem, index) => mensagem === mensagens[index]);
